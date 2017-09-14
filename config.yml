@@ -1,0 +1,28 @@
+build_task: pipelines/gradle/tasks/gradle-assemble.yml # don't change
+deploy_dev_task: pipelines/cf/tasks/blue-green-deploy.yml # don't change
+
+app_name: config-server
+jar_name: kattia-eureka-server
+
+github_app_repo_uri: https://github.com/kgmr2015/eureka-server
+github_app_repo_branch: master # don't change
+
+github_pipelines_repo_uri: https://github.com/kgmr2015/training-pipelines-initial
+github_pipelines_repo_branch: master # don't change
+
+version_bucket: rscale-training-bucket # don't change
+version_bucket_region_name: us-west-2 # don't change
+
+version_key: kattia.marinrobles-config-version 
+initial_version: 0.0.1
+
+artifact_regexp: kattia-config-(.*).jar
+artifact_bucket: rscale-training-bucket # don't change
+artifact_bucket_region_name: us-west-2 # don't change
+
+cf_dev_api: https://api.run.pivotal.io
+cf_dev_organization: rscale-training-3
+cf_dev_space: kattia.marinrobles@cgi.com
+cf_dev_hostname: eureka-serverkattia
+cf_dev_domain: cfapps.io
+cf_dev_manifest: manifest.yml
